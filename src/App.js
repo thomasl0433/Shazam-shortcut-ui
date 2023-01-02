@@ -8,7 +8,7 @@ function App() {
   const [expired, setExpired] = useState("");
 
   const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
-  const REDIRECT_URI = process.env.REACT_APP_ENV === "DEV" ? "http://localhost:3000" : "https://spotify-subgenre-thomasl0433.vercel.app";
+  const REDIRECT_URI = process.env.REACT_APP_ENV === "DEV" ? "http://localhost:3000" : "https://shazam-shortcut.vercel.app";
   const RESPONSE_TYPE = "token";
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
 
