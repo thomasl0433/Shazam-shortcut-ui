@@ -7,12 +7,13 @@ function App() {
   const [token, setToken] = useState("");
   const [expired, setExpired] = useState("");
 
+  const scope = "playlist-modify-public"
   const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
   const REDIRECT_URI = process.env.REACT_APP_ENV === "DEV" ? "http://localhost:3000" : "https://shazam-shortcut.vercel.app";
   const RESPONSE_TYPE = "token";
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
 
-  const loginString = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`
+  const loginString = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=${scope}&response_type=${RESPONSE_TYPE}`
 
   useEffect(() => {
     // cache token
