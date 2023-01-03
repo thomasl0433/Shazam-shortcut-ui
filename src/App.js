@@ -38,7 +38,10 @@ function App() {
 
   const sendToExpress = async (token) => {
     // prod url ---> https://shazam-shortcut-pqymwrjaca-uc.a.run.app
-    await axios.get("http://localhost:8080/receive-token", {
+    const url = process.env.REACT_APP_ENV === "DEV" ? "http://localhost:8080/receive-token" : "https://shazam-shortcut-pqymwrjaca-uc.a.run.app/receive-token"
+    console.log(url)
+
+    await axios.get(url, {
       params: {
         data: token
       }
